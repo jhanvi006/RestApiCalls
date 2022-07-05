@@ -11,7 +11,11 @@ public class HelloRestController {
     }
     @GetMapping("/query")
     @ResponseBody
-    public String displayMessage(@RequestParam String name){
+    public String displayMessageWithQueryParam(@RequestParam String name){
         return "Hello "+name+"!";
+    }
+    @GetMapping("param/{name}")
+    public String displayMessageWithPathVar(@PathVariable String name){
+        return "Hello from "+name+"!";
     }
 }
