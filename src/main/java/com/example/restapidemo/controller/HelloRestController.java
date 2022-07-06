@@ -1,5 +1,6 @@
 package com.example.restapidemo.controller;
 
+import com.example.restapidemo.model.User;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -17,5 +18,9 @@ public class HelloRestController {
     @GetMapping("param/{name}")
     public String displayMessageWithPathVar(@PathVariable String name){
         return "Hello from "+name+"!";
+    }
+    @PostMapping("/post")
+    public String displayUsingPostMapping(@RequestBody User user){
+        return user.getFirstName()+" "+user.getLastName();
     }
 }
