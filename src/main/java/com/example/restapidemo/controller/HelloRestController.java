@@ -23,4 +23,8 @@ public class HelloRestController {
     public String displayUsingPostMapping(@RequestBody User user){
         return user.getFirstName()+" "+user.getLastName();
     }
+    @PutMapping("/put/{firstName}/")
+    public String displayUsingPutMapping(@RequestParam String lastName, @PathVariable String firstName){
+        return "Hello "+firstName+" "+lastName+"!";
+    }
 }
